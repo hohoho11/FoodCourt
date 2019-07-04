@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%  String url = request.getParameter("url"); 
+	String menu = "menu1.jsp";
+	if(url!= null) menu = "menu"+url+".jsp";
+	System.out.println(menu);
+%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -45,62 +50,10 @@
 </head>
 
 <body>
-asdfasdf
-    <header class="logolist">
-        <div class="row">
-            <div class="col-6 col-md-3 logo"><img src="img/logo1.png" alt=""></div>
-            <div class="col-6 col-md-3 logo"><img src="img/logo2.png" alt=""></div>
-            <div class="col-6 col-md-3 logo"><img src="img/logo3.png" alt=""></div>
-            <div class="col-6 col-md-3 logo"><img src="img/logo4.png" alt=""></div>
-        </div>
-        <div class="row">
-            <div class="col-6 col-md-3 logo"><img src="img/logo5.png" alt=""></div>
-            <div class="col-6 col-md-3 logo"><img src="img/logo6.png" alt=""></div>
-            <div class="col-6 col-md-3 logo"><img src="img/logo7.png" alt=""></div>
-            <div class="col-6 col-md-3 logo"><img src="img/logo8.png" alt=""></div>
-        </div>
-    </header>
-    <jsp:include page="menu.jsp"></jsp:include>
-	<footer>
-		<table class="table">
-			<form action="">
-				<thead>
-					<tr align="center">
-						<td id="main" colspan="5" span style="color: black">주문현황</td>
-					</tr>
-					<tr>
-						<th scope="col">가게명</th>
-						<th scope="col">메뉴명</th>
-						<th scope="col">가격</th>
-						<th scope="col">수량</th>
 
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="row">맘스터치</th>
-						<td>버거</td>
-						<td>7,000</td>
-						<td>1</td>
-						<td><img class="x" src="C:\Users\bitcamp\Desktop\가게명\x.jpg"
-							alt=""></td>
-					</tr>
-					<tr>
-						<th scope="row">미미네떡볶이</th>
-						<td>떡볶이</td>
-						<td>4,000</td>
-						<td>1</td>
-						<td><img class="x" src="C:\Users\bitcamp\Desktop\가게명\x.jpg"
-							alt=""></td>
-					</tr>
-
-				</tbody>
-		</table>
-		<div id="submit">
-			<input type="submit" value="결제">
-		</div>
-		</form>
-	</footer>
+	<jsp:include page="header.jsp"></jsp:include>
+    <jsp:include page="<%=menu %>"></jsp:include>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 
 </html>
