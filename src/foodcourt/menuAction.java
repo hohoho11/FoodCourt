@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.menuDao;
+
 /**
  * Servlet implementation class menuAction
  */
@@ -17,7 +19,7 @@ public class menuAction extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		menuDao a = new menuDao();
 		System.out.println();
 	}
 
